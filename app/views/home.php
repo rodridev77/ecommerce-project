@@ -1,0 +1,1 @@
+<h1><?php echo $product_list; ?></h1>
