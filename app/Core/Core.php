@@ -38,7 +38,7 @@ class Core {
         $currentController = ucfirst($currentController);
         $prefixo = '\app\Controllers\\';
 
-        if ((!file_exists('app\Controllers/' . $currentController . '.php')) || (!method_exists($prefixo . $currentController, $currentAction))) {
+        if ((!file_exists('app/Controllers/' . $currentController . '.php')) || (!method_exists($prefixo . $currentController, $currentAction))) {
             $currentController = 'NotfoundController';
             $currentAction = 'index';
         }
