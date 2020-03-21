@@ -4,12 +4,8 @@ namespace app\Core;
 
 class Core {
 
-    public function run() {
-        $url = '/';
 
-        if (isset($_GET['url'])) {
-            $url .= $_GET['url'];
-        }
+    private function makeRoute($url){
 
         $params = array();
 
@@ -38,6 +34,13 @@ class Core {
         $currentController = ucfirst($currentController);
         $prefixo = '\app\Controllers\\';
 
+        return ["currentController"=>$currentController,"prefixo"=>$prefixo,"params"=>$params,"currentAction"=>$currentAction];
+    }
+
+    private function runRoute($params){
+
+        extract($params);
+
         if ((!file_exists('app/Controllers/' . $currentController . '.php')) || (!method_exists($prefixo . $currentController, $currentAction))) {
             $currentController = 'NotfoundController';
             $currentAction = 'index';
@@ -46,6 +49,19 @@ class Core {
         $newController = $prefixo . $currentController;
         $controller = new $newController();
         call_user_func_array(array($controller, $currentAction), $params);
+    }
+
+    public function run() {
+        $url = '/';
+
+        if (isset($_GET['url'])) {
+            $url .= $_GET['url'];
+        }
+
+        $params = $this->makeRoute($url);
+        
+        $this->runRoute($params);
+        
     }
 
 }
