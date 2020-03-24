@@ -23,7 +23,7 @@ class Core {
                 $currentAction = "index";
             }
 
-            if (count($url > 0)) {
+            if (count($url) > 0) {
                 $params = $url;
             }
         } else {
@@ -57,9 +57,9 @@ class Core {
         if (isset($_GET['url'])) {
             $url .= $_GET['url'];
         }
-
+        //echo $url;
         $params = $this->makeRoute($url);
-        
+        //var_dump($params);
         $this->runRoute($params);
         
     }

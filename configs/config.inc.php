@@ -11,8 +11,8 @@ if (ENVIRONMENT == "development") {
 
 // CONFIGURAÇÃO DO BANDO DE DADOS #####################
 define('HOST', 'localhost');
-define('DBNAME', 'ecommerce');
+define('DBNAME', 'mydb');
 define('USER', 'root');
-define('PASS', '123');
+define('PASS', '');
 define('DRIVER', 'mysql');
 define('CHARSET', 'utf8');
