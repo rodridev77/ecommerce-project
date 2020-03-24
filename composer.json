@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": ">= 7"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\Controllers\\": "app/Controllers/",
+            "app\\Models\\": "app/Models/",
+            "app\\Core\\": "app/Core/"
+        }
+    }
+}
