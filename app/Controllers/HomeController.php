@@ -17,12 +17,4 @@ class HomeController extends Controller {
         $this->loadTemplate($viewPath, $viewName, $this->data);
     }
 
-    public function teste($teste) {
-        $viewPath = '';
-        $viewName = "teste";
-        $this->data['teste'] = $teste;
-
-        $this->loadTemplate($viewPath, $viewName, $this->data);
-    }
-
 }
