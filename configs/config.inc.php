@@ -4,7 +4,7 @@ require_once "environment.php";
 
 // CONFIGURAÇÃO DO AMBIENTE #####################
 if (ENVIRONMENT == "development") {
-    define("BASE_URL", "http://localhost/projeto_ecommerce/");
+    define("BASE_URL", "http://localhost/project_commerce/");
 } else {
     define("BASE_URL", "http://meusite.com.br/");
 }
