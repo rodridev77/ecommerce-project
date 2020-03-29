@@ -56,7 +56,7 @@ class Core {
         if (isset($_GET['url'])) {
             $url .= $_GET['url'];
         }
-
+        //echo $url;
         $params = $this->makeRoute($url);
 
         $this->runRoute($params);
