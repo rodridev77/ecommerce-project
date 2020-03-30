@@ -4,8 +4,7 @@ namespace app\Core;
 
 class Core {
 
-
-    private function makeRoute($url){
+    private function makeRoute($url) {
 
         $params = array();
 
@@ -34,10 +33,10 @@ class Core {
         $currentController = ucfirst($currentController);
         $prefixo = '\app\Controllers\\';
 
-        return ["currentController"=>$currentController,"prefixo"=>$prefixo,"params"=>$params,"currentAction"=>$currentAction];
+        return ["currentController" => $currentController, "prefixo" => $prefixo, "params" => $params, "currentAction" => $currentAction];
     }
 
-    private function runRoute($params){
+    private function runRoute($params) {
 
         extract($params);
 
@@ -59,9 +58,8 @@ class Core {
         }
         //echo $url;
         $params = $this->makeRoute($url);
-        //var_dump($params);
+
         $this->runRoute($params);
-        
     }
 
 }
