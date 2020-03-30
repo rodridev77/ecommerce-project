@@ -47,7 +47,8 @@ class CustomerController extends Controller{
 					"name" => FILTER_SANITIZE_STRING, 
 					"surname" => FILTER_SANITIZE_STRING,
 					"phone" => FILTER_SANITIZE_STRING,
-					"cpf" => FILTER_SANITIZE_STRING
+					"cpf" => FILTER_SANITIZE_STRING,
+					"voucher_id"=>FILTER_VALIDATE_INT
 					);
 
 		$postData = filter_input_array(INPUT_POST,$data);
