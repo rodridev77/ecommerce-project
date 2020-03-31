@@ -22,7 +22,12 @@ class Voucher
 		try {
 
 			$query = "INSERT INTO voucher (type,value,creation_date,expiration_date) VALUES (:type,:value,:creation_date,:expiration_date)";
+			
 			$stt = $this->conn->prepare($query);
+
+			if ($voucherData['type']==NULL) {
+				$voucherData['type'] = 0;
+			}
 
 			$stt->bindValue(":type", $voucherData['type'], PDO::PARAM_INT);
 			$stt->bindValue(":value", $voucherData['value'], PDO::PARAM_STR);
