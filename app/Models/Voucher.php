@@ -20,9 +20,11 @@ class Voucher
 	public function newVoucher($voucherData){
 
 		try {
-			$query = "INSERT INTO voucher (value,creation_date,expiration_date) VALUES (:value,:creation_date,:expiration_date)";
+
+			$query = "INSERT INTO voucher (type,value,creation_date,expiration_date) VALUES (:type,:value,:creation_date,:expiration_date)";
 			$stt = $this->conn->prepare($query);
 
+			$stt->bindValue(":type", $voucherData['type'], PDO::PARAM_INT);
 			$stt->bindValue(":value", $voucherData['value'], PDO::PARAM_STR);
 			$stt->bindValue(":creation_date", $voucherData['creation_date'], PDO::PARAM_STR);
 			$stt->bindValue(":expiration_date", $voucherData['expiration_date'], PDO::PARAM_STR);

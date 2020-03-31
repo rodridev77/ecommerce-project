@@ -9,7 +9,7 @@ class VoucherController extends Controller
     private $data = [];
 
     public function addVoucher(){
-        $voucherData = array("value"=>FILTER_SANITIZE_STRING,
+        $voucherData = array("type"=>FILTER_VALIDATE_INT,"value"=>FILTER_SANITIZE_STRING,
         "creation_date"=>FILTER_SANITIZE_STRING,
         "expiration_date"=>FILTER_SANITIZE_STRING);
 
